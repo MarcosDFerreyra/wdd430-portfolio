@@ -1,18 +1,14 @@
 import ProjectCard from "@/components/ProjectCard";
-import { getBaseUrl } from "@/lib/getBaseUrl";
-
-export const dynamic = 'force-dynamic';
-
+import { getProjects } from "@/lib/projects-db";
 
 export default async function OpenSourceProjects() {
-    const res = await fetch(`${getBaseUrl()}/api/projects?type=opensource`);
-    const projects = await res.json();
+    const projects = getProjects("opensource");
 
     return (
         <main className="text-white max-w-4xl mx-auto px-4 py-12">
             <h1>Open Source Projects</h1>
             <div className="space-y-4">
-                {projects.map((project: any) => (
+                {projects.map((project) => (
                     <ProjectCard
                         key={project.id}
                         title={project.title}

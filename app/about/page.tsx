@@ -7,7 +7,6 @@ export default function About() {
             <p className="text-white text-lg text-gray-700">
                 This about page shares more information about my background and work.
             </p>
-            <ContactInfo name="Marcos Ferreyra" email="marcos30@gmail.com" phone="+54 1234 5678" address="Florencion Varela, Buenos Aires, Argentina" />
         </main>
     );
 }

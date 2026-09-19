@@ -1,0 +1,13 @@
+import ContactInfo from "@/components/Contact";
+
+export default function Contact() {
+    return (
+        <main className="text-white max-w-4xl mx-auto px-4 py-12">
+            <h2 className="text-3xl font-bold mb-4">Contact Information</h2>
+            <p className="text-white text-lg text-gray-700">
+                This is where you can find my contact details.
+            </p>
+            <ContactInfo name="Marcos Ferreyra" email="marcos30@gmail.com" phone="+54 1234 5678" address="Florencion Varela, Buenos Aires, Argentina" />
+        </main>
+    );
+}

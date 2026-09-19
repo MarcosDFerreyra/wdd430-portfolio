@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import NavLinks from './NavLinks';
 
 export default function Header() {
     return (
@@ -6,10 +7,7 @@ export default function Header() {
             <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
                 <div id="header-title" className="text-2xl font-bold">Marcos Ferreyra</div>
                 <nav aria-label="Main navigation">
-                    <ul className="flex items-center gap-6">
-                        <li><Link href="/" className="hover:text-blue-200 transition-colors">Home</Link></li>
-                        <li><Link href="/about" className="hover:text-blue-200 transition-colors">About</Link></li>
-                    </ul>
+                   <NavLinks />
                 </nav>
             </div>
         </header>

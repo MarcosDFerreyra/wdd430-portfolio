@@ -1,6 +1,9 @@
 import ProjectCard from "@/components/ProjectCard";
 import { getBaseUrl } from "@/lib/getBaseUrl";
 
+export const dynamic = 'force-dynamic';
+
+
 export default async function OpenSourceProjects() {
     const res = await fetch(`${getBaseUrl()}/api/projects?type=opensource`);
     const projects = await res.json();

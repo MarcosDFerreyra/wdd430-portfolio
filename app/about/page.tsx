@@ -1,5 +1,3 @@
-import ContactInfo from "@/components/Contact";
-
 export default function About() {
     return (
         <main className="text-white max-w-4xl mx-auto px-4 py-12">

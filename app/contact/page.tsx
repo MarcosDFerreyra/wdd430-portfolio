@@ -1,4 +1,4 @@
-import ContactInfo from "@/components/Contact";
+import ContactInfo from "@/components/Contact-information";
 
 export default function Contact() {
     return (

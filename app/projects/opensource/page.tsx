@@ -1,7 +1,8 @@
 import ProjectCard from "@/components/ProjectCard";
+import { getBaseUrl } from "@/lib/getBaseUrl";
 
 export default async function OpenSourceProjects() {
-    const res = await fetch('http://localhost:3000/api/projects?type=opensource');
+    const res = await fetch(`${getBaseUrl()}/api/projects?type=opensource`);
     const projects = await res.json();
 
     return (

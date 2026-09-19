@@ -1,14 +1,19 @@
 import ProjectCard from "@/components/ProjectCard";
+import { getProjects } from "@/lib/projects-db";
 
-export default async function Projects() {
-    const res = await fetch('http://localhost:3000/api/projects');
-    const projects = await res.json();
+export default async function Projects({
+    searchParams,
+}: {
+    searchParams: Promise<{ type?: string }>;
+}) {
+    const { type } = await searchParams;
+    const projects = getProjects(type);
 
     return (
         <main className="text-white max-w-4xl mx-auto px-4 py-12">
             <h1>Projects Overview</h1>
             <div className="space-y-4">
-                {projects.map((project: any) => (
+                {projects.map((project) => (
                     <ProjectCard
                         key={project.id}
                         title={project.title}

@@ -19,8 +19,8 @@ export default function Home() {
     <main className="container mx-auto px-4 py-12">
       <section className="text-center py-12">
         <h1 className="text-4xl font-bold mb-4">My Portfolio</h1>
-        <p className="text-lg text-gray-700">
-          Hi! this is my portfolio. I'm a student developer currently learning about Next.js and React. Here are some of my recent projects.
+        <p className="text-lg text-gray-700 dark:text-gray-300">
+          Hi! this is my portfolio. I am a student developer currently learning about Next.js and React. Here are some of my recent projects.
         </p>
       </section>
       <ProjectList projects={projects} />

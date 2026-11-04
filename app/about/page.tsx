@@ -8,12 +8,6 @@ export default function About() {
                 I am a Software Development student at BYU-Idaho Pathway, based in Florencio Varela, Argentina.
                 I'am currently learning full-stack web development with Next.js, React, and TypeScript.
             </p>
-            <ContactInfo
-                name="Marcos Ferreyra"
-                email="marcos30@gmail.com"
-                phone="+54 1234 5678"
-                address="Florencio Varela, Buenos Aires, Argentina"
-            />
         </main>
     );
 }

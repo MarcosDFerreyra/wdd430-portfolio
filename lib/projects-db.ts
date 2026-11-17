@@ -1,3 +1,6 @@
+import { sql } from '@vercel/postgres';
+
+
 export interface Project {
     id: number;
     title: string;
@@ -7,31 +10,16 @@ export interface Project {
     link?: string;
 }
 
-export const projects: Project[] = [
-    {
-        id: 1,
-        title: 'Project 1',
-        description: 'Description for Project 1',
-        type: 'opensource',
-        technologies: ['TypeScript', 'React'],
-        link: '/projects/1'
-    },
-    {
-        id: 2,
-        title: 'Project 2',
-        description: 'Description for Project 2',
-        type: 'school',
-        technologies: ['JavaScript', 'HTML', 'CSS'],
-        link: '/projects/2'
+export async function getProjects(type?: string | null): Promise<Project[]> { 
+    if (type) {
+        const { rows } = await sql<Project>`SELECT * FROM projects WHERE type = ${type} ORDER BY id`;
+        return rows;
     }
-];
-
-export function getProjects(type?: string | null): Project[] { 
-    if (type) 
-        return projects.filter(project => project.type === type);
-    return projects;
+    const { rows } = await sql<Project>`SELECT * FROM projects ORDER BY id`;
+    return rows;
 }
-
-export function getProjectById(id: number): Project | null{
-    return projects.find(project => project.id === id) ?? null
+ 
+export async function getProjectById(id: number): Promise<Project | null> {
+    const { rows } = await sql<Project>`SELECT * FROM projects WHERE id = ${id}`;
+    return rows[0] ?? null;
 }

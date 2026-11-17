@@ -2,8 +2,7 @@ import ProjectCard from "@/components/ProjectCard";
 import { getProjects } from "@/lib/projects-db";
 
 export default async function OpenSourceProjects() {
-    const projects = getProjects("opensource");
-
+    const projects = await getProjects("opensource");
     return (
         <main className="text-white max-w-4xl mx-auto px-4 py-12">
             <h1>Open Source Projects</h1>

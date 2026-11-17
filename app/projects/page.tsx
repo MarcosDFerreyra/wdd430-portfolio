@@ -1,8 +1,10 @@
 import ProjectCard from "@/components/ProjectCard";
 import { getProjects } from "@/lib/projects-db";
 
+export const dynamic = "force-dynamic";
+
 export default async function Projects() {
-    const projects = getProjects();
+    const projects = await getProjects();
 
     return (
         <main className="text-white max-w-4xl mx-auto px-4 py-12">
